@@ -26,7 +26,62 @@
         },
         "projects": {
             "title": "Projetos que Participei",
-            "info_button": "Ver<br/>Mais"
+            "info_button": "Ver<br/>Mais",
+            "project_link": "Ver Projeto",
+            "data": [
+                {
+                    "img": "/OrganoZero.png",
+                    "link": "https://organozero.com.br",
+                    "title": "OrganoZero",
+                    "date": "ago/2022",
+                    "skills": [
+                        {"img": "/icons/React.svg", "name": "React.js"},
+                        {"img": "/icons/Tailwind.svg", "name": "Tailwind"},
+                        {"img": "/icons/Wordpress.svg", "name": "Wordpress"}
+                    ],
+                    "text": "Teste"
+                },
+                {
+                    "img": "/Ibras.png",
+                    "link": "https://organozero.com.br",
+                    "title": "Ibrás",
+                    "date": "ago/2022",
+                    "skills": [
+                        {"img": "/icons/React.svg", "name": "React.js"}
+                    ],
+                    "text": "Teste"
+                },
+                {
+                    "img": "/Sw-solar.png",
+                    "link": "https://organozero.com.br",
+                    "title": "Sw Solar",
+                    "date": "ago/2022",
+                    "skills": [
+                        {"img": "/icons/React.svg", "name": "React.js"}
+                    ],
+                    "text": "Teste"
+                },
+                {
+                    "img": "/Ggl.png",
+                    "link": "https://organozero.com.br",
+                    "title": "GGL Móveis",
+                    "date": "ago/2022",
+                    "skills": [
+                        {"img": "/icons/React.svg", "name": "React.js"}
+                    ],
+                    "text": "Teste"
+                },
+                {
+                    "img": "/Golf.png",
+                    "link": "https://organozero.com.br",
+                    "title": "Golf Club PG",
+                    "date": "ago/2022",
+                    "skills": [
+                        {"img": "/icons/React.svg", "name": "React.js"}
+                    ],
+                    "text": "Teste"
+                }
+            ]
         }
     }
 }
