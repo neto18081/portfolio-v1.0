@@ -89,7 +89,8 @@ function App() {
       maxWidth: "768px",
       maxHeight: "calc(100vh - 110px)",
     },
-    overflowY: "auto"
+    overflowY: "auto",
+    zIndex: "2"
   };
 
   useEffect(() => {
