@@ -4,7 +4,7 @@ import Burger from "@animated-burgers/burger-squeeze";
 import "@animated-burgers/burger-squeeze/dist/styles.css";
 import { useState } from "react";
 
-export default function Header() {
+export default function Header({ changeLang, lang }) {
   const [burger, setBurger] = useState(false);
   return (
     <>
@@ -55,6 +55,21 @@ export default function Header() {
             >
               <li>Contato</li>
             </a>
+            <div className="tw-text-white md:tw-text-black">
+              <button
+                className={`tw-text-[22px] ${lang === "pt" && "tw-font-bold"}`}
+                onClick={() => changeLang("pt")}
+              >
+                PT
+              </button>
+              <span className="tw-text-white md:tw-text-black"> | </span>
+              <button
+                className={`tw-text-[22px] ${lang === "en" && "tw-font-bold"}`}
+                onClick={() => changeLang("en")}
+              >
+                EN
+              </button>
+            </div>
           </ul>
           <Burger
             className="tw-block md:tw-hidden"

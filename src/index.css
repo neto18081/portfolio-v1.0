@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: "Merriweather";
@@ -21,7 +25,7 @@ h1,h2,h3,h4,h5,h6 {
 
 span, p {
   font-size: 18px;
-  line-height: 100%;
+  line-height: 125%;
 }
 
 .burger .burger-lines,
@@ -31,6 +35,13 @@ span, p {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.project:hover img {
+  transform: scale(1.1);
+}
+.project:hover div {
+  opacity: 100%;
 }
 
 @layer base {

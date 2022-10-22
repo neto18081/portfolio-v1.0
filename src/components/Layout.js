@@ -1,9 +1,9 @@
 import Header from "./Header";
 
-export default function Layout({ children }) {
+export default function Layout({ children, changeLang, lang }) {
   return (
     <>
-      <Header />
+      <Header changeLang={changeLang} lang={lang} />
       {children}
     </>
   );
