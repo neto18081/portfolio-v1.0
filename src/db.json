@@ -1,0 +1,25 @@
+{
+    "pt": {
+        "experience": [
+            {
+                "title": "Cursando Engenharia de computação",
+                "date": "2020 - 2025",
+                "content": "Tenho experiência na criação de sites, desde a criação do projeto, frontend, integração com banco de dados e publicação.<hr/>Tenho experiência na criação de sites, desde a criação do projeto, frontend."
+            },
+            {
+                "title": "E2C Empresa júnior de Eng. de Computação",
+                "date": "2020 - 2021",
+                "content": "Tenho experiência na criação de sites, desde a criação do projeto, frontend, integração com banco de dados e publicação"
+            },
+            {
+                "title": "Desenvolvedor Web - Agência Ade!",
+                "date": "2021 -",
+                "content": "Tenho experiência na criação de sites, desde a criação do projeto, frontend, integração com banco de dados e publicação.<hr/>Tenho experiência."
+            }
+        ],
+        "about": {
+            "title": "Minha carreira em tecnologia iniciou quando decidi cursar Engenharia de Computação.",
+            "content": "A partir daí, desenvolvi cada vez mais paixão pela profissão, aprofundando meus estudos em desenvolvimento web, frontend e backend.<hr/>Gosto muito dessa área e fico feliz de poder trabalhar com isso.<hr/>Tenho experiência na criação de sites, desde a criação do projeto, frontend, integração com banco de dados e publicação. Busco sempre criar projetos que possuam o melhor desempenho possível, utilizando tecnologias que otimizam a velocidade do site e criando códigos que evitem o desperdício de processamento.<hr/>Além disso, procuro sempre utilizar boas práticas de código que facilitam a manutenção e ajustes futuros."
+        }
+    }
+}
