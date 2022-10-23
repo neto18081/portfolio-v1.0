@@ -40,8 +40,10 @@ code {
 .project:hover img {
   transform: scale(1.1);
 }
-.project:hover div {
-  opacity: 100%;
+@media (min-width: 768px) {
+  .project:hover div {
+    opacity: 100%;
+  }
 }
 
 @layer base {
