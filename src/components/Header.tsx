@@ -1,11 +1,20 @@
 import { SiJavascript } from "react-icons/si";
 
-import Burger from "@animated-burgers/burger-squeeze";
-import "@animated-burgers/burger-squeeze/dist/styles.css";
 import { useState } from "react";
+import "@animated-burgers/burger-squeeze/dist/styles.css";
 
-export default function Header({ changeLang, lang }) {
+import Burger from "@animated-burgers/burger-squeeze";
+
+type HeaderProps = {
+  lang: string;
+  changeLang: (lang: string) => void;
+};
+
+export default function Header({ changeLang, lang }: HeaderProps) {
   const [burger, setBurger] = useState(false);
+  const ul: { name: string; link: string }[] =
+    require("../db/header.json")[lang];
+
   return (
     <>
       <div className="tw-flex tw-items-center tw-justify-center tw-w-full tw-px-[20px] tw-h-[70px] tw-shadow-md tw-fixed tw-bg-white tw-z-[100]">
@@ -20,41 +29,17 @@ export default function Header({ changeLang, lang }) {
               burger ? "tw-translate-x-0" : "tw-translate-x-full"
             } md:tw-translate-x-0`}
           >
-            <a
-              className="menu-link"
-              onClick={() => setBurger(false)}
-              href="#experiencia"
-            >
-              <li>Experiência</li>
-            </a>
-            <a
-              className="menu-link"
-              onClick={() => setBurger(false)}
-              href="#sobre"
-            >
-              <li>Sobre</li>
-            </a>
-            <a
-              className="menu-link"
-              onClick={() => setBurger(false)}
-              href="#habilidades"
-            >
-              <li>Habilidades</li>
-            </a>
-            <a
-              className="menu-link"
-              onClick={() => setBurger(false)}
-              href="#projetos"
-            >
-              <li>Projetos</li>
-            </a>
-            <a
-              className="menu-link"
-              onClick={() => setBurger(false)}
-              href="#contato"
-            >
-              <li>Contato</li>
-            </a>
+            {ul.map((u, i) => (
+              <a
+                key={i}
+                className="menu-link"
+                onClick={() => setBurger(false)}
+                href={u.link}
+              >
+                <li>{u.name}</li>
+              </a>
+            ))}
+
             <div className="tw-text-white md:tw-text-black">
               <button
                 className={`tw-text-[22px] ${lang === "pt" && "tw-font-bold"}`}

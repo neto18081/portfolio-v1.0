@@ -1,0 +1,16 @@
+{
+    "pt": [
+        {"name": "Sobre", "link": "#sobre"},
+        {"name": "Experiência", "link": "#experiencia"},
+        {"name": "Habilidades", "link": "#habilidades"},
+        {"name": "Projetos", "link": "#projetos"},
+        {"name": "Contato", "link": "#contato"}
+    ],
+    "en": [
+        {"name": "About", "link": "#sobre"},
+        {"name": "Experience", "link": "#experiencia"},
+        {"name": "Skills", "link": "#habilidades"},
+        {"name": "Projects", "link": "#projetos"},
+        {"name": "Contact", "link": "#contato"}
+    ]
+}

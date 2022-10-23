@@ -11,6 +11,14 @@ import { useForm } from "react-hook-form";
 
 import Modal from "react-modal";
 
+type Greetings = {
+  hi: string;
+  im: string;
+  name: string;
+  role: string;
+  subtitle: string;
+};
+
 type Experience = {
   title: string;
   date: string;
@@ -44,6 +52,7 @@ type Projects = {
 };
 
 interface DataType {
+  greetings: Greetings;
   experience: Array<Experience>;
   about: About;
   skills: {
@@ -57,7 +66,7 @@ function App() {
 
   const [activeLang, setActiveLang] = useState<string>(defaultLanguage);
   const [data, setData] = useState<DataType>(
-    require("./db.json")[defaultLanguage]
+    require("./db/db.json")[defaultLanguage]
   );
 
   const [experience, setExperience] = useState<Experience & { active: number }>(
@@ -120,7 +129,7 @@ function App() {
   }, [modal.active]);
 
   function changeLang(lang: string) {
-    setData(require("./db.json")[lang]);
+    setData(require("./db/db.json")[lang]);
     setActiveLang(lang);
   }
 
@@ -138,23 +147,24 @@ function App() {
 
   return (
     <Layout lang={activeLang} changeLang={changeLang}>
-      <div className="tw-flex tw-items-center tw-justify-center tw-px-[20px] tw-py-[50px] tw-max-w-[1024px] tw-mx-auto tw-w-full tw-flex-col md:tw-flex-row tw-gap-[30px] sm:tw-gap-[10px]">
+      <div className="tw-flex tw-items-center tw-justify-center tw-px-[20px] tw-py-[50px] tw-max-w-[1024px] tw-mx-auto tw-w-full tw-flex-col md:tw-flex-row tw-gap-[30px] sm:tw-gap-[10px] tw-min-h-screen">
         <div
           data-aos="fade-right"
           className="tw-w-full md:tw-w-[50%] tw-flex tw-items-center tw-justify-center md:tw-justify-start"
         >
           <div className="tw-max-w-[400px] tw-w-full tw-flex tw-items-start tw-flex-col tw-gap-[20px]">
             <h1 className="tw-text-[42px] sm:tw-text-[56px] tw-font-extrabold tw-text-black tw-leading-[90%]">
-              Olá, <span className="tw-text-[28px] sm:tw-text-[32px]">sou</span>
-              <br />
-              Pedro Nunes, <br />
+              {data.greetings.hi},{" "}
               <span className="tw-text-[28px] sm:tw-text-[32px]">
-                Desenvolvedor Web
+                {data.greetings.im}
+              </span>
+              <br />
+              {data.greetings.name}, <br />
+              <span className="tw-text-[28px] sm:tw-text-[32px]">
+                {data.greetings.role}
               </span>
             </h1>
-            <span className="tw-block">
-              Trabalho com programação de sites, tanto frontend quanto backend.
-            </span>
+            <span className="tw-block">{data.greetings.subtitle}</span>
             <div className="tw-flex tw-items-center tw-justify-start tw-gap-[20px]">
               <a
                 target="_blank"
@@ -176,6 +186,22 @@ function App() {
         <div data-aos="slide-right" className="tw-w-full md:tw-w-[50%]">
           <img src="/banner.png" alt="Pedro Nunes" />
         </div>
+      </div>
+
+      <div
+        id="sobre"
+        className="tw-px-[20px] tw-py-[100px] tw-mx-auto tw-w-full tw-max-w-[1024px]"
+      >
+        <div className="tw-flex tw-items-center tw-justify-start tw-flex-col sm:tw-flex-row tw-gap-[30px] tw-pb-[30px]">
+          <img
+            className="tw-w-[150px] sm:tw-w-[300px] tw-rounded-full"
+            src="/photo1.jpg"
+            alt="Pedro Nunes"
+          />
+          <h2 className="tw-text-left tw-pb-[20px]">{data.about.title}</h2>
+        </div>
+
+        <p>{HTMLReactParser(data.about.content)}</p>
       </div>
 
       <div
@@ -211,14 +237,6 @@ function App() {
             </p>
           </div>
         </div>
-      </div>
-
-      <div
-        id="sobre"
-        className="tw-px-[20px] tw-py-[100px] tw-mx-auto tw-w-full tw-max-w-[1024px]"
-      >
-        <h2 className="tw-text-left tw-pb-[20px]">{data.about.title}</h2>
-        <p>{HTMLReactParser(data.about.content)}</p>
       </div>
 
       <div

@@ -1,5 +1,12 @@
 {
     "pt": {
+        "greetings": {
+            "hi": "Olá",
+            "im": "sou",
+            "name": "Pedro Nunes",
+            "role": "Desenvolvedor Web",
+            "subtitle": "Trabalho com programação de sites, tanto frontend quanto backend."
+        },
         "experience": [
             {
                 "title": "Cursando Engenharia de computação",
@@ -82,6 +89,16 @@
                     "text": "Teste"
                 }
             ]
+        },
+        "contact": {
+            "title": "Contato",
+            "subtitle": "Entre em contato através das formas abaixo. Ou se prefirir use minhas redes sociais",
+            "phone": "Telefone"
+        },
+        "footer": {
+            "rights": "Todos os direitos reservados",
+            "developed": "Desenvolvido por"
         }
     }
+    
 }

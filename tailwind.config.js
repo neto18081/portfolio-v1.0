@@ -10,6 +10,7 @@ module.exports = {
         white: "#fff",
         black: "#232327",
         gray: "#787878",
+        blue: "#4f95d0",
       },
       fontFamily: {
         nunito: "Nunito Sans",
