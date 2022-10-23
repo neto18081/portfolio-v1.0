@@ -1,3 +1,4 @@
+import Footer from "./Footer";
 import Header from "./Header";
 
 export default function Layout({ children, changeLang, lang }) {
@@ -5,6 +6,7 @@ export default function Layout({ children, changeLang, lang }) {
     <>
       <Header changeLang={changeLang} lang={lang} />
       {children}
+      <Footer />
     </>
   );
 }

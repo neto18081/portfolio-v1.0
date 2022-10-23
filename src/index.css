@@ -38,7 +38,7 @@ code {
 }
 
 .project:hover img {
-  transform: scale(1.1);
+  transform: scale(1.1); 
 }
 @media (min-width: 768px) {
   .project:hover div {
@@ -58,5 +58,13 @@ code {
 
   h2 {
     @apply tw-font-bold tw-text-[32px] md:tw-text-[52px] tw-text-center tw-text-black tw-leading-[100%];
+  }
+
+  .contact-input {
+    @apply tw-max-w-[450px] tw-w-full tw-outline-none tw-px-[25px] tw-py-[9px] tw-rounded-[10px] tw-border-[2px] tw-border-[#848484] focus:tw-border-[#4f95d0];
+  }
+
+  .error-message {
+    @apply tw-text-[16px] tw-text-[#cc0000] tw-font-nunito tw-font-medium tw-pt-[5px];
   }
 }

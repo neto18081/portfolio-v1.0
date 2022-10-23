@@ -11,6 +11,9 @@ module.exports = {
         black: "#232327",
         gray: "#787878",
       },
+      fontFamily: {
+        nunito: "Nunito Sans",
+      },
     },
   },
   plugins: [],

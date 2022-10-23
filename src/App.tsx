@@ -7,6 +7,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 import HTMLReactParser from "html-react-parser";
+import { useForm } from "react-hook-form";
 
 import Modal from "react-modal";
 
@@ -51,8 +52,6 @@ interface DataType {
   projects: Projects;
 }
 
-// const rawData:DataType = require('./db.json');
-
 function App() {
   const defaultLanguage = navigator.language.includes("pt") ? "pt" : "en";
 
@@ -68,6 +67,12 @@ function App() {
     content: data.projects.data[0],
     active: false,
   });
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
 
   const skills = [
     { img: "/icons/Javascript.svg", name: "Javascript" },
@@ -118,6 +123,18 @@ function App() {
     setData(require("./db.json")[lang]);
     setActiveLang(lang);
   }
+
+  const [phone, setPhone] = useState("");
+
+  function phoneMask(v: string) {
+    v = v.replace(/\D/g, ""); //Remove tudo o que não é dígito
+    v = v.replace(/^(\d{2})(\d)/g, "($1) $2"); //Coloca parênteses em volta dos dois primeiros dígitos
+    v = v.replace(/(\d)(\d{4})$/, "$1-$2"); //Coloca hífen entre o quarto e o quinto dígitos
+    console.log(v);
+    setPhone(v);
+  }
+
+  const onSubmit = (data: any) => console.log(data);
 
   return (
     <Layout lang={activeLang} changeLang={changeLang}>
@@ -236,7 +253,7 @@ function App() {
           {data.projects.data.map((p, i) => (
             <button
               onClick={() => setModal({ active: true, content: p })}
-              className='project tw-relative tw-w-[300px] tw-h-[300px] tw-overflow-hidden after:tw-content-[""] after:tw-w-full after:tw-h-full after:tw-absolute after:tw-top-0 after:tw-left-0 after:tw-bg-[rgba(0,0,0,.3)] after:tw-opacity-0 after:hover:tw-opacity-100 tw-duration-300 tw-ease-out'
+              className='project tw-relative tw-w-[200px] sm:tw-w-[300px] tw-h-[200px] sm:tw-h-[300px] tw-overflow-hidden after:tw-content-[""] after:tw-w-full after:tw-h-full after:tw-absolute after:tw-top-0 after:tw-left-0 after:tw-bg-[rgba(0,0,0,.3)] after:tw-opacity-0 after:hover:tw-opacity-100 tw-duration-300 tw-ease-out'
               key={i}
             >
               <div className="tw-w-[100px] tw-h-[100px] tw-absolute tw-top-[50%] tw-left-[50%] tw-translate-x-[-50%] tw-translate-y-[-50%] tw-bg-[#4F95D0] tw-rounded-full tw-flex tw-items-center tw-justify-center tw-pointer-events-none tw-z-[1] tw-opacity-0 tw-duration-300 tw-ease-out">
@@ -305,6 +322,129 @@ function App() {
             <div>{HTMLReactParser(modal.content.text)}</div>
           </div>
         </Modal>
+      </div>
+
+      <div
+        id="contato"
+        className="tw-px-[20px] tw-py-[100px] tw-mx-auto tw-w-full tw-max-w-[1024px]"
+      >
+        <h2>Contato</h2>
+
+        <div className="tw-py-[30px]">
+          <span>
+            Entre em contato através das formas abaixo. Ou se prefirir use
+            minhas redes sociais
+          </span>
+          <div className="tw-flex tw-items-start tw-justify-center tw-flex-col tw-py-[20px] sm:tw-p-[20px] tw-gap-[10px]">
+            <span className="tw-font-nunito tw-font-bold tw-text-[18px] sm:tw-text-[22px]">
+              Email:{" "}
+              <span className="tw-font-medium tw-text-[18px] sm:tw-text-[22px]">
+                pedro.neto72pn@gmail.com
+              </span>
+            </span>
+            <span className="tw-font-nunito tw-font-bold tw-text-[18px] sm:tw-text-[22px]">
+              Telefone:{" "}
+              <span className="tw-font-medium tw-text-[18px] sm:tw-text-[22px]">
+                (42) 9 9935-7242
+              </span>
+            </span>
+            <div className="tw-flex tw-items-center tw-justify-start tw-gap-[20px]">
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.linkedin.com/in/pedro-nunes-23a767184/"
+              >
+                <img src="/Linkedin.svg" alt="Linkedin" />
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://github.com/neto18081"
+              >
+                <img src="/GitHub.svg" alt="Github" />
+              </a>
+            </div>
+          </div>
+        </div>
+        {/* <form
+          // onSubmit={handleSubmit(onSubmit)}
+          method="POST"
+          action="mailto:pedro.neto72pn@gmail.com"
+          className="tw-flex tw-items-start tw-justify-center tw-flex-col tw-gap-[20px] tw-w-full tw-max-w-[450px] tw-mx-auto tw-py-[50px]"
+        >
+          <div className="tw-w-full tw-flex tw-items-start tw-justify-center tw-flex-col">
+            <input
+              {...register("name", {
+                required: true,
+              })}
+              className={`contact-input ${
+                errors.name ? "tw-border-[#cc0000]" : ""
+              }`}
+              type="text"
+              placeholder="Nome"
+            />
+            {errors.name && (
+              <span className="error-message">Campo nome é obrigatório!</span>
+            )}
+          </div>
+          <div className="tw-w-full tw-flex tw-items-start tw-justify-center tw-flex-col">
+            <input
+              {...register("email", {
+                required: true,
+              })}
+              className={`contact-input ${
+                errors.email ? "tw-border-[#cc0000]" : ""
+              }`}
+              type="email"
+              placeholder="Email"
+            />
+            {errors.email && (
+              <span className="error-message">Campo email é obrigatório!</span>
+            )}
+          </div>
+          <div className="tw-w-full tw-flex tw-items-start tw-justify-center tw-flex-col">
+            <input
+              className={`contact-input ${
+                errors.phone ? "tw-border-[#cc0000]" : ""
+              }`}
+              type="tel"
+              placeholder="Telefone"
+              {...register("phone", {
+                required: true,
+              })}
+            />
+
+            {errors.phone && (
+              <span className="error-message">
+                Campo telefone é obrigatório!
+              </span>
+            )}
+          </div>
+          <div className="tw-w-full tw-flex tw-items-start tw-justify-center tw-flex-col">
+            <textarea
+              {...register("message", {
+                required: true,
+              })}
+              className={`contact-input ${
+                errors.message ? "tw-border-[#cc0000]" : ""
+              }`}
+              placeholder="Mensagem"
+              rows={10}
+            ></textarea>
+
+            {errors.message && (
+              <span className="error-message">
+                Campo mensagem é obrigatório!
+              </span>
+            )}
+          </div>
+          <button
+            className="tw-w-full tw-bg-[#4f95d0] tw-px-[30px] tw-py-[10px] tw-text-white tw-rounded-[10px] tw-font-medium hover:tw-font-bold"
+            type="submit"
+          >
+            Enviar
+          </button>
+        </form> */}
       </div>
     </Layout>
   );
