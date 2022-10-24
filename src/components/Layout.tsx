@@ -15,7 +15,7 @@ export default function Layout({ children, changeLang, lang }: LayoutProps) {
     <>
       <Header changeLang={changeLang} lang={lang} />
       {children}
-      <Footer />
+      <Footer lang={lang} />
     </>
   );
 }

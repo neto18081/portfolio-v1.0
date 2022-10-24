@@ -51,6 +51,12 @@ type Projects = {
   data: Project[];
 };
 
+type Contact = {
+  title: string;
+  subtitle: string;
+  phone: string;
+};
+
 interface DataType {
   greetings: Greetings;
   experience: Array<Experience>;
@@ -59,6 +65,7 @@ interface DataType {
     title: string;
   };
   projects: Projects;
+  contact: Contact;
 }
 
 function App() {
@@ -346,13 +353,10 @@ function App() {
         id="contato"
         className="tw-px-[20px] tw-py-[100px] tw-mx-auto tw-w-full tw-max-w-[1024px]"
       >
-        <h2>Contato</h2>
+        <h2>{data.contact.title}</h2>
 
         <div className="tw-py-[30px]">
-          <span>
-            Entre em contato através das formas abaixo. Ou se prefirir use
-            minhas redes sociais
-          </span>
+          <span>{data.contact.subtitle}</span>
           <div className="tw-flex tw-items-start tw-justify-center tw-flex-col tw-py-[20px] sm:tw-p-[20px] tw-gap-[10px]">
             <span className="tw-font-nunito tw-font-bold tw-text-[18px] sm:tw-text-[22px]">
               Email:{" "}
@@ -361,7 +365,7 @@ function App() {
               </span>
             </span>
             <span className="tw-font-nunito tw-font-bold tw-text-[18px] sm:tw-text-[22px]">
-              Telefone:{" "}
+              {data.contact.phone}:{" "}
               <span className="tw-font-medium tw-text-[18px] sm:tw-text-[22px]">
                 (42) 9 9935-7242
               </span>
