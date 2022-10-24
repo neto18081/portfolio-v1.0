@@ -21,8 +21,11 @@ type Greetings = {
 
 type Experience = {
   title: string;
-  date: string;
-  content: string;
+  data: Array<{
+    title: string;
+    date: string;
+    content: string;
+  }>;
 };
 
 type About = {
@@ -59,7 +62,7 @@ type Contact = {
 
 interface DataType {
   greetings: Greetings;
-  experience: Array<Experience>;
+  experience: Experience;
   about: About;
   skills: {
     title: string;
@@ -76,9 +79,9 @@ function App() {
     require("./db/db.json")[defaultLanguage]
   );
 
-  const [experience, setExperience] = useState<Experience & { active: number }>(
-    { ...data.experience[0], active: 0 }
-  );
+  const [experience, setExperience] = useState<
+    Experience["data"][0] & { active: number }
+  >({ ...data.experience.data[0], active: 0 });
   const [modal, setModal] = useState<{ content: Project; active: boolean }>({
     content: data.projects.data[0],
     active: false,
@@ -89,6 +92,10 @@ function App() {
     watch,
     formState: { errors },
   } = useForm();
+
+  useEffect(() => {
+    setExperience({ ...data.experience.data[0], active: 0 });
+  }, [activeLang]);
 
   const skills = [
     { img: "/icons/Javascript.svg", name: "Javascript" },
@@ -215,11 +222,11 @@ function App() {
         id="experiencia"
         className="tw-px-[20px] tw-mt-[-110px] tw-pt-[110px]"
       >
-        <h2>Experiência & Educação</h2>
+        <h2>{data.experience.title}</h2>
 
         <div className="tw-mx-auto tw-w-full tw-max-w-[1024px] tw-py-[40px] tw-flex tw-items-center tw-justify-center tw-gap-[20px] tw-flex-col md:tw-flex-row">
           <div className="tw-flex tw-items-start tw-justify-center tw-flex-col tw-w-full md:tw-w-[30%] md:tw-border-r-[2px] tw-border-gray">
-            {data.experience.map((e, i) => (
+            {data.experience.data.map((e, i) => (
               <button
                 style={
                   i === experience.active
@@ -344,7 +351,9 @@ function App() {
                 </div>
               </div>
             </div>
-            <div>{HTMLReactParser(modal.content.text)}</div>
+            <div className="tw-flex tw-flex-col tw-justify-start tw-gap-[10px]">
+              {HTMLReactParser(modal.content.text)}
+            </div>
           </div>
         </Modal>
       </div>

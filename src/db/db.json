@@ -7,26 +7,29 @@
             "role": "Desenvolvedor Web",
             "subtitle": "Trabalho com programação de sites, tanto frontend quanto backend."
         },
-        "experience": [
-            {
-                "title": "Cursando Engenharia de computação",
-                "date": "2020 - 2025",
-                "content": "Tenho experiência na criação de sites, desde a criação do projeto, frontend, integração com banco de dados e publicação.<hr/>Tenho experiência na criação de sites, desde a criação do projeto, frontend."
-            },
-            {
-                "title": "E2C Empresa júnior de Eng. de Computação",
-                "date": "2020 - 2021",
-                "content": "Tenho experiência na criação de sites, desde a criação do projeto, frontend, integração com banco de dados e publicação"
-            },
-            {
-                "title": "Desenvolvedor Web - Agência Ade!",
-                "date": "2021 -",
-                "content": "Tenho experiência na criação de sites, desde a criação do projeto, frontend, integração com banco de dados e publicação.<hr/>Tenho experiência."
-            }
-        ],
         "about": {
             "title": "Minha carreira em tecnologia iniciou quando decidi cursar Engenharia de Computação.",
             "content": "A partir daí, desenvolvi cada vez mais paixão pela profissão, aprofundando meus estudos em desenvolvimento web, frontend e backend.<hr/>Gosto muito dessa área e fico feliz de poder trabalhar com isso.<hr/>Tenho experiência na criação de sites, desde a criação do projeto, frontend, integração com banco de dados e publicação. Busco sempre criar projetos que possuam o melhor desempenho possível, utilizando tecnologias que otimizam a velocidade do site e criando códigos que evitem o desperdício de processamento.<hr/>Além disso, procuro sempre utilizar boas práticas de código que facilitam a manutenção e ajustes futuros."
+        },
+        "experience": {
+            "title": "Experiência & Educação",
+            "data": [
+                {
+                    "title": "Cursando Engenharia de computação",
+                    "date": "2020 - 2025",
+                    "content": "Atualmente estou cursando engenharia de computação na UEPG (Universidade Estadual de Ponta Grossa)."
+                },
+                {
+                    "title": "E2C Empresa júnior de Eng. de Computação",
+                    "date": "2020 - 2021",
+                    "content": "Em 2020 entrei na Empresa Júnior de Engenharia de Computação. Foi aí que comecei a aprender sobre desenvolvimento web."
+                },
+                {
+                    "title": "Desenvolvedor Web - Agência Ade!",
+                    "date": "2021 -",
+                    "content": "Em outubro de 2021 entrei como estagiário na Agência Ade! e tive a oportunidade de aprender muito sobre programação de sites e tecnologias mais modernas.<hr/>Em maio de 2022 fui efetivado, trabalhando de forma remota."
+                }
+            ]
         },
         "skills": {
             "title": "Habilidades"
@@ -37,57 +40,65 @@
             "project_link": "Ver Projeto",
             "data": [
                 {
+                    "img": "/Golf.png",
+                    "link": "https://golf-club-pg.vercel.app/",
+                    "title": "Golf Club PG",
+                    "date": "ago/2022",
+                    "skills": [
+                        {"img": "/icons/Next.svg", "name": "Next.js"},
+                        {"img": "/icons/Tailwind.svg", "name": "Tailwind"},
+                        {"img": "/icons/Wordpress.svg", "name": "Wordpress"}
+                    ],
+                    "text": "<p>Esse foi o primeiro projeto que utilizei tailwind, uma biblioteca que utiliza classes de estilo para customizar a aplicação. Gostei muito de utilizá-lo, pois percebi que facilitou muito o uso de estilos na aplicação, principalmente para reutilizar estilos parecidos.</p><p>Além disso, percebi uma grande melhora no tempo de programação do site e um melhor desempenho da aplicação.</p>"
+                },
+                {
                     "img": "/OrganoZero.png",
                     "link": "https://organozero.com.br",
                     "title": "OrganoZero",
                     "date": "ago/2022",
                     "skills": [
-                        {"img": "/icons/React.svg", "name": "React.js"},
+                        {"img": "/icons/Next.svg", "name": "Next.js"},
                         {"img": "/icons/Tailwind.svg", "name": "Tailwind"},
                         {"img": "/icons/Wordpress.svg", "name": "Wordpress"}
                     ],
-                    "text": "Teste"
+                    "text": "<p>Esse foi um dos sites mais rápidos que programei. Fiz junto com um amigo e terminamos em 5 dias. Utilizamos tailwind para estilização e isso acelerou bastante o processo.</p>"
                 },
                 {
                     "img": "/Ibras.png",
-                    "link": "https://organozero.com.br",
+                    "link": "https://www.ibras.com.br/",
                     "title": "Ibrás",
                     "date": "ago/2022",
                     "skills": [
-                        {"img": "/icons/React.svg", "name": "React.js"}
+                        {"img": "/icons/Next.svg", "name": "Next.js"},
+                        {"img": "/icons/Wordpress.svg", "name": "Wordpress"}
                     ],
-                    "text": "Teste"
+                    "text": "<p>Site feito utilizando Next.js e Styled Components para estilização. Nesse site pude aprender muita coisa, pois criei várias rotas customizadas no backend, utilizando PHP e o Wordpress.</p><p>Aprendi bem como funcionam rotas e como criá-las no backend.</p>"
                 },
                 {
                     "img": "/Sw-solar.png",
-                    "link": "https://organozero.com.br",
+                    "link": "https://sw-solar.vercel.app/",
                     "title": "Sw Solar",
                     "date": "ago/2022",
                     "skills": [
-                        {"img": "/icons/React.svg", "name": "React.js"}
+                        {"img": "/icons/Next.svg", "name": "Next.js"},
+                        {"img": "/icons/Tailwind.svg", "name": "Tailwind"},
+                        {"img": "/icons/Wordpress.svg", "name": "Wordpress"}
                     ],
-                    "text": "Teste"
+                    "text": "<p>Após o projeto golf, todos os seguintes utilizei tailwind, visto que senti uma grande melhora no desempenho do site e na velocidade de programação.</p><p>Site feito em Next.js e integrado com um painel Wordpress.</p>"
                 },
                 {
                     "img": "/Ggl.png",
-                    "link": "https://organozero.com.br",
+                    "link": "https://ggl-deviumlabs.vercel.app/",
                     "title": "GGL Móveis",
                     "date": "ago/2022",
                     "skills": [
-                        {"img": "/icons/React.svg", "name": "React.js"}
+                        {"img": "/icons/React.svg", "name": "React.js"},
+                        {"img": "/icons/Tailwind.svg", "name": "Tailwind"},
+                        {"img": "/icons/Node.svg", "name": "Node"}
                     ],
-                    "text": "Teste"
-                },
-                {
-                    "img": "/Golf.png",
-                    "link": "https://organozero.com.br",
-                    "title": "Golf Club PG",
-                    "date": "ago/2022",
-                    "skills": [
-                        {"img": "/icons/React.svg", "name": "React.js"}
-                    ],
-                    "text": "Teste"
+                    "text": "<p>Projeto que fiz de freelance junto com um amigo para uma empresa de Ponta Grossa. Foi o primeiro projeto que fizemos por inteiro, tanto design do site quanto programação. Foi bom para ganhar experiência, já que foi a primeira vez que nós tivemos contato com o cliente do início ao fim.</p><p>O projeto ainda não foi finalizado.</p>"
                 }
+                
             ]
         },
         "contact": {
@@ -104,93 +115,105 @@
             "role": "Web Developer",
             "subtitle": "I work developing websites, frontend and backend."
         },
-        "experience": [
-            {
-                "title": "Cursando Engenharia de computação",
-                "date": "2020 - 2025",
-                "content": "Tenho experiência na criação de sites, desde a criação do projeto, frontend, integração com banco de dados e publicação.<hr/>Tenho experiência na criação de sites, desde a criação do projeto, frontend."
-            },
-            {
-                "title": "E2C Empresa júnior de Eng. de Computação",
-                "date": "2020 - 2021",
-                "content": "Tenho experiência na criação de sites, desde a criação do projeto, frontend, integração com banco de dados e publicação"
-            },
-            {
-                "title": "Desenvolvedor Web - Agência Ade!",
-                "date": "2021 -",
-                "content": "Tenho experiência na criação de sites, desde a criação do projeto, frontend, integração com banco de dados e publicação.<hr/>Tenho experiência."
-            }
-        ],
         "about": {
-            "title": "Minha carreira em tecnologia iniciou quando decidi cursar Engenharia de Computação.",
-            "content": "A partir daí, desenvolvi cada vez mais paixão pela profissão, aprofundando meus estudos em desenvolvimento web, frontend e backend.<hr/>Gosto muito dessa área e fico feliz de poder trabalhar com isso.<hr/>Tenho experiência na criação de sites, desde a criação do projeto, frontend, integração com banco de dados e publicação. Busco sempre criar projetos que possuam o melhor desempenho possível, utilizando tecnologias que otimizam a velocidade do site e criando códigos que evitem o desperdício de processamento.<hr/>Além disso, procuro sempre utilizar boas práticas de código que facilitam a manutenção e ajustes futuros."
+            "title": "My tech career started when I decided to attend Computer Engineering",
+            "content": "Since then, I developed more and more passion for this profession, deepening my knowledge in web development, frontend and backend.<hr/>I really like this area and I'm very happy to work with it.<hr/>I have experience creating websites, from the project creation, frontend, integration with database and publication. I always look for creating projects that perform as good as possible, using technologies that optimize the website speed and creating codes that avoid processing waste.<hr/>Besides that, I look for creating codes that follow good practices and make code maintenance easier for future adjustments."
         },
+        "experience": {
+            "title": "Experience & Education",
+            "data": [
+                {
+                    "title": "Studying Computer Engineering",
+                    "date": "2020 - 2025",
+                    "content": "Currently, I'm studying Computer Engineering in UEPG (State University of Ponta Grossa)"
+                },
+                {
+                    "title": "E2C Junior Company of Computer Engineering",
+                    "date": "2020 - 2021",
+                    "content": "In 2020, I joined the Junior Company of Computer Engineering. There, I stated learning about Web Development."
+                },
+                {
+                    "title": "Web Developer - Agência Ade!",
+                    "date": "2021 -",
+                    "content": "In october 2021, I joined Agencia Ade! as intern and had the opportunity to learned a lot about website programming and modern frameworks.<hr/>In may 2022, I was hired and stated working remotely."
+                }
+            ]
+        },
+        
         "skills": {
             "title": "Skills"
         },
         "projects": {
-            "title": "Projects",
+            "title": "Projetos que Participei",
             "info_button": "Ver<br/>Mais",
             "project_link": "Ver Projeto",
             "data": [
+                {
+                    "img": "/Golf.png",
+                    "link": "https://golf-club-pg.vercel.app/",
+                    "title": "Golf Club PG",
+                    "date": "ago/2022",
+                    "skills": [
+                        {"img": "/icons/Next.svg", "name": "Next.js"},
+                        {"img": "/icons/Tailwind.svg", "name": "Tailwind"},
+                        {"img": "/icons/Wordpress.svg", "name": "Wordpress"}
+                    ],
+                    "text": "<p>Esse foi o primeiro projeto que utilizei tailwind, uma biblioteca que utiliza classes de estilo para customizar a aplicação. Gostei muito de utilizá-lo, pois percebi que facilitou muito o uso de estilos na aplicação, principalmente para reutilizar estilos parecidos.</p><p>Além disso, percebi uma grande melhora no tempo de programação do site e um melhor desempenho da aplicação.</p>"
+                },
                 {
                     "img": "/OrganoZero.png",
                     "link": "https://organozero.com.br",
                     "title": "OrganoZero",
                     "date": "ago/2022",
                     "skills": [
-                        {"img": "/icons/React.svg", "name": "React.js"},
+                        {"img": "/icons/Next.svg", "name": "Next.js"},
                         {"img": "/icons/Tailwind.svg", "name": "Tailwind"},
                         {"img": "/icons/Wordpress.svg", "name": "Wordpress"}
                     ],
-                    "text": "Teste"
+                    "text": "<p>Esse foi um dos sites mais rápidos que programei. Fiz junto com um amigo e terminamos em 5 dias. Utilizamos tailwind para estilização e isso acelerou bastante o processo.</p>"
                 },
                 {
                     "img": "/Ibras.png",
-                    "link": "https://organozero.com.br",
+                    "link": "https://www.ibras.com.br/",
                     "title": "Ibrás",
                     "date": "ago/2022",
                     "skills": [
-                        {"img": "/icons/React.svg", "name": "React.js"}
+                        {"img": "/icons/Next.svg", "name": "Next.js"},
+                        {"img": "/icons/Wordpress.svg", "name": "Wordpress"}
                     ],
-                    "text": "Teste"
+                    "text": "<p>Site feito utilizando Next.js e Styled Components para estilização. Nesse site pude aprender muita coisa, pois criei várias rotas customizadas no backend, utilizando PHP e o Wordpress.</p><p>Aprendi bem como funcionam rotas e como criá-las no backend.</p>"
                 },
                 {
                     "img": "/Sw-solar.png",
-                    "link": "https://organozero.com.br",
+                    "link": "https://sw-solar.vercel.app/",
                     "title": "Sw Solar",
                     "date": "ago/2022",
                     "skills": [
-                        {"img": "/icons/React.svg", "name": "React.js"}
+                        {"img": "/icons/Next.svg", "name": "Next.js"},
+                        {"img": "/icons/Tailwind.svg", "name": "Tailwind"},
+                        {"img": "/icons/Wordpress.svg", "name": "Wordpress"}
                     ],
-                    "text": "Teste"
+                    "text": "<p>Após o projeto golf, todos os seguintes utilizei tailwind, visto que senti uma grande melhora no desempenho do site e na velocidade de programação.</p><p>Site feito em Next.js e integrado com um painel Wordpress.</p>"
                 },
                 {
                     "img": "/Ggl.png",
-                    "link": "https://organozero.com.br",
+                    "link": "https://ggl-deviumlabs.vercel.app/",
                     "title": "GGL Móveis",
                     "date": "ago/2022",
                     "skills": [
-                        {"img": "/icons/React.svg", "name": "React.js"}
+                        {"img": "/icons/React.svg", "name": "React.js"},
+                        {"img": "/icons/Tailwind.svg", "name": "Tailwind"},
+                        {"img": "/icons/Node.svg", "name": "Node"}
                     ],
-                    "text": "Teste"
-                },
-                {
-                    "img": "/Golf.png",
-                    "link": "https://organozero.com.br",
-                    "title": "Golf Club PG",
-                    "date": "ago/2022",
-                    "skills": [
-                        {"img": "/icons/React.svg", "name": "React.js"}
-                    ],
-                    "text": "Teste"
+                    "text": "<p>Projeto que fiz de freelance junto com um amigo para uma empresa de Ponta Grossa. Foi o primeiro projeto que fizemos por inteiro, tanto design do site quanto programação. Foi bom para ganhar experiência, já que foi a primeira vez que nós tivemos contato com o cliente do início ao fim.</p><p>O projeto ainda não foi finalizado.</p>"
                 }
+                
             ]
         },
         "contact": {
             "title": "Contact",
-            "subtitle": "Entre em contato através das formas abaixo. Ou se prefirir use minhas redes sociais",
-            "phone": "Telefone"
+            "subtitle": "Get in touch using one of the ways below. If you prefer use one of my social medias.",
+            "phone": "Phone"
         }
     }
     
