@@ -82,9 +82,14 @@ function App() {
   const [experience, setExperience] = useState<
     Experience["data"][0] & { active: number }
   >({ ...data.experience.data[0], active: 0 });
-  const [modal, setModal] = useState<{ content: Project; active: boolean }>({
+  const [modal, setModal] = useState<{
+    content: Project;
+    active: boolean;
+    index: number;
+  }>({
     content: data.projects.data[0],
     active: false,
+    index: 0,
   });
   const {
     register,
@@ -95,6 +100,7 @@ function App() {
 
   useEffect(() => {
     setExperience({ ...data.experience.data[0], active: 0 });
+    setModal({ ...modal, content: data.projects.data[modal.index] });
   }, [activeLang]);
 
   const skills = [
@@ -284,7 +290,7 @@ function App() {
         <div className="tw-w-full tw-flex tw-items-center tw-justify-center tw-flex-wrap tw-py-[50px]">
           {data.projects.data.map((p, i) => (
             <button
-              onClick={() => setModal({ active: true, content: p })}
+              onClick={() => setModal({ active: true, content: p, index: i })}
               className='project tw-relative tw-w-[200px] sm:tw-w-[300px] tw-h-[200px] sm:tw-h-[300px] tw-overflow-hidden after:tw-content-[""] after:tw-w-full after:tw-h-full after:tw-absolute after:tw-top-0 after:tw-left-0 after:tw-bg-[rgba(0,0,0,.3)] after:tw-opacity-0 after:hover:tw-opacity-100 tw-duration-300 tw-ease-out'
               key={i}
             >

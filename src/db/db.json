@@ -144,7 +144,7 @@
             "title": "Skills"
         },
         "projects": {
-            "title": "Projetos que Participei",
+            "title": "Projects I Participated",
             "info_button": "Ver<br/>Mais",
             "project_link": "Ver Projeto",
             "data": [
@@ -158,7 +158,7 @@
                         {"img": "/icons/Tailwind.svg", "name": "Tailwind"},
                         {"img": "/icons/Wordpress.svg", "name": "Wordpress"}
                     ],
-                    "text": "<p>Esse foi o primeiro projeto que utilizei tailwind, uma biblioteca que utiliza classes de estilo para customizar a aplicação. Gostei muito de utilizá-lo, pois percebi que facilitou muito o uso de estilos na aplicação, principalmente para reutilizar estilos parecidos.</p><p>Além disso, percebi uma grande melhora no tempo de programação do site e um melhor desempenho da aplicação.</p>"
+                    "text": "<p>This was the first project I used tailwind, a css library that uses styled classes to style the application. I really enjoyed using it, once I noticed that styling was much easier, mostly for reuse similar styles.</p><p>Furthermore, I realized a great impact in the website performance and in my programming speed.</p>"
                 },
                 {
                     "img": "/OrganoZero.png",
@@ -170,7 +170,7 @@
                         {"img": "/icons/Tailwind.svg", "name": "Tailwind"},
                         {"img": "/icons/Wordpress.svg", "name": "Wordpress"}
                     ],
-                    "text": "<p>Esse foi um dos sites mais rápidos que programei. Fiz junto com um amigo e terminamos em 5 dias. Utilizamos tailwind para estilização e isso acelerou bastante o processo.</p>"
+                    "text": "<p>That was one of the fastest websites I programmed. I made it with a friend of mine and we finished it within 5 days. We used tailwind for styling and it speed up a lot the process.</p>"
                 },
                 {
                     "img": "/Ibras.png",
@@ -181,7 +181,7 @@
                         {"img": "/icons/Next.svg", "name": "Next.js"},
                         {"img": "/icons/Wordpress.svg", "name": "Wordpress"}
                     ],
-                    "text": "<p>Site feito utilizando Next.js e Styled Components para estilização. Nesse site pude aprender muita coisa, pois criei várias rotas customizadas no backend, utilizando PHP e o Wordpress.</p><p>Aprendi bem como funcionam rotas e como criá-las no backend.</p>"
+                    "text": "<p>This site was made using Next.js and Styled Components for styling. Here, I could learn a lot of things, since I had to make custom routes in the backend, using PHP and Wordpress.</p><p>I learned better how routes works and how to create them in the backend</p>"
                 },
                 {
                     "img": "/Sw-solar.png",
@@ -193,7 +193,7 @@
                         {"img": "/icons/Tailwind.svg", "name": "Tailwind"},
                         {"img": "/icons/Wordpress.svg", "name": "Wordpress"}
                     ],
-                    "text": "<p>Após o projeto golf, todos os seguintes utilizei tailwind, visto que senti uma grande melhora no desempenho do site e na velocidade de programação.</p><p>Site feito em Next.js e integrado com um painel Wordpress.</p>"
+                    "text": "<p>After the golf project, all my following projects were made with Tailwind, once I felt a great difference between using it or not.</p><p>Website made with Next.js and integrated with a Wordpress panel.</p>"
                 },
                 {
                     "img": "/Ggl.png",
@@ -205,7 +205,7 @@
                         {"img": "/icons/Tailwind.svg", "name": "Tailwind"},
                         {"img": "/icons/Node.svg", "name": "Node"}
                     ],
-                    "text": "<p>Projeto que fiz de freelance junto com um amigo para uma empresa de Ponta Grossa. Foi o primeiro projeto que fizemos por inteiro, tanto design do site quanto programação. Foi bom para ganhar experiência, já que foi a primeira vez que nós tivemos contato com o cliente do início ao fim.</p><p>O projeto ainda não foi finalizado.</p>"
+                    "text": "<p>Project that I made as freelance with a friend of mine for a company of Ponta Grossa. That was the first time we made the whole website process, from design to programming. It was really good for earn experince, since we had contact with the client from start to end.</p><p>This project isn't finished already.</p>"
                 }
                 
             ]
