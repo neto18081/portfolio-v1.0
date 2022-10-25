@@ -18,7 +18,10 @@ export default function Header({ changeLang, lang }: HeaderProps) {
   return (
     <>
       <div className="tw-flex tw-items-center tw-justify-center tw-w-full tw-px-[20px] tw-h-[70px] tw-shadow-md tw-fixed tw-bg-white tw-z-[100]">
-        <div className="tw-flex tw-items-center tw-justify-between tw-w-full tw-mx-auto tw-max-w-[1280px]">
+        <div
+          id="header"
+          className="tw-flex tw-items-center tw-justify-between tw-w-full tw-mx-auto tw-max-w-[1280px]"
+        >
           <div className="tw-flex tw-items-center tw-gap-[10px]">
             <span className="tw-font-medium tw-text-[22px]">Pedro</span>
             <SiJavascript color="#ffdf00" size={25} />
@@ -43,14 +46,20 @@ export default function Header({ changeLang, lang }: HeaderProps) {
             <div className="tw-text-white md:tw-text-black">
               <button
                 className={`tw-text-[22px] ${lang === "pt" && "tw-font-bold"}`}
-                onClick={() => changeLang("pt")}
+                onClick={() => {
+                  setBurger(false);
+                  changeLang("pt");
+                }}
               >
                 PT
               </button>
               <span className="tw-text-white md:tw-text-black"> | </span>
               <button
                 className={`tw-text-[22px] ${lang === "en" && "tw-font-bold"}`}
-                onClick={() => changeLang("en")}
+                onClick={() => {
+                  setBurger(false);
+                  changeLang("en");
+                }}
               >
                 EN
               </button>

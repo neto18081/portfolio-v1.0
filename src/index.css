@@ -28,9 +28,10 @@ span, p {
   line-height: 125%;
 }
 
-.burger .burger-lines,
-.burger .burger-lines:after,
-.burger .burger-lines:before { background-color: #474A59; }
+#header .burger .burger-lines, #header .burger .burger-lines:after, #header .burger .burger-lines:before { background-color: #4f95d0; }
+#header .open .burger-lines {
+  background: transparent!important;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
