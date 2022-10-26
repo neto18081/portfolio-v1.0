@@ -178,7 +178,7 @@ function App() {
 
   const onSubmit = (form: any) => {
     setLoading({ ...loading, contact: true });
-    const url = "https://pedronunes-mail.vercel.app/api";
+    const url = "https://mail.pedronunes.dev/api";
     const body = {
       subject: "Novo Contato | Portfolio",
       message: `
