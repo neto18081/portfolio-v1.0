@@ -109,6 +109,7 @@ function App() {
     register,
     handleSubmit,
     watch,
+    reset,
     formState: { errors },
   } = useForm();
 
@@ -201,13 +202,12 @@ function App() {
       .then((res) => {
         toast.success(data.contact.success, {});
         setLoading({ ...loading, contact: false });
-        console.log(res);
       })
       .catch((err) => {
         toast.error(data.contact.error, {});
         setLoading({ ...loading, contact: false });
-        console.log(err);
       });
+    reset();
   };
 
   return (
