@@ -103,8 +103,14 @@
         },
         "contact": {
             "title": "Contato",
-            "subtitle": "Entre em contato através das formas abaixo. Ou se prefirir use minhas redes sociais",
-            "phone": "Telefone"
+            "subtitle": "Entre em contato abaixo. Ou se prefirir use minhas redes sociais",
+            "phone": "Telefone",
+            "name": "Nome",
+            "message": "Mensagem",
+            "required": "Campo obrigatório!",
+            "send": "Enviar",
+            "success": "Email enviado com sucesso!",
+            "error": "Algo deu errado! Por favor tente mais tarde."
         }
     },
     "en": {
@@ -212,8 +218,14 @@
         },
         "contact": {
             "title": "Contact",
-            "subtitle": "Get in touch using one of the ways below. If you prefer use one of my social medias.",
-            "phone": "Phone"
+            "subtitle": "Get in touch below. If you prefer use one of my social medias.",
+            "phone": "Phone",
+            "name": "Name",
+            "message": "Message",
+            "required": "This field is required",
+            "send": "Send",
+            "success": "Email sent successfully!",
+            "error": "Something went wrong! Try again later."
         }
     }
     

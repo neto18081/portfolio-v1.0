@@ -4,12 +4,16 @@ import { IoMdClose } from "react-icons/io";
 import Layout from "./components/Layout";
 
 import AOS from "aos";
-import "aos/dist/aos.css";
 
 import HTMLReactParser from "html-react-parser";
 import { useForm } from "react-hook-form";
 
 import Modal from "react-modal";
+
+import ReactLoading from "react-loading";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "aos/dist/aos.css";
 
 type Greetings = {
   hi: string;
@@ -58,6 +62,12 @@ type Contact = {
   title: string;
   subtitle: string;
   phone: string;
+  name: string;
+  message: string;
+  required: string;
+  send: string;
+  success: string;
+  error: string;
 };
 
 interface DataType {
@@ -78,6 +88,9 @@ function App() {
   const [data, setData] = useState<DataType>(
     require("./db/db.json")[defaultLanguage]
   );
+  const [loading, setLoading] = useState({
+    contact: false,
+  });
 
   const [experience, setExperience] = useState<
     Experience["data"][0] & { active: number }
@@ -163,10 +176,42 @@ function App() {
     setPhone(v);
   }
 
-  const onSubmit = (data: any) => console.log(data);
+  const onSubmit = (form: any) => {
+    setLoading({ ...loading, contact: true });
+    const url = "https://pedronunes-mail.vercel.app/api";
+    const body = {
+      subject: "Novo Contato | Portfolio",
+      message: `
+      <p>Nome: ${form.name}</p>
+      <p>Email: ${form.email}</p>
+      <p>Telefone: ${form.phone}</p>
+      <p>Mensagem: ${form.message}</p>
+      `,
+    };
+
+    fetch(url, {
+      method: "POST",
+      body: JSON.stringify(body),
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "https://www.pedronunes.dev/",
+      },
+    })
+      .then((res) => {
+        toast.success(data.contact.success, {});
+        setLoading({ ...loading, contact: false });
+        console.log(res);
+      })
+      .catch((err) => {
+        toast.error(data.contact.error, {});
+        setLoading({ ...loading, contact: false });
+        console.log(err);
+      });
+  };
 
   return (
     <Layout lang={activeLang} changeLang={changeLang}>
+      <ToastContainer position="bottom-right" />
       <div className="tw-flex tw-items-center tw-justify-center tw-px-[20px] tw-py-[50px] tw-max-w-[1024px] tw-mx-auto tw-w-full tw-flex-col md:tw-flex-row tw-gap-[30px] sm:tw-gap-[10px] tw-min-h-screen">
         <div
           data-aos="fade-right"
@@ -371,42 +416,13 @@ function App() {
         <h2>{data.contact.title}</h2>
 
         <div className="tw-py-[30px]">
-          <span>{data.contact.subtitle}</span>
-          <div className="tw-flex tw-items-start tw-justify-center tw-flex-col tw-py-[20px] sm:tw-p-[20px] tw-gap-[10px]">
-            <span className="tw-font-nunito tw-font-bold tw-text-[18px] sm:tw-text-[22px]">
-              Email:{" "}
-              <span className="tw-font-medium tw-text-[18px] sm:tw-text-[22px]">
-                pedro.neto72pn@gmail.com
-              </span>
-            </span>
-            <span className="tw-font-nunito tw-font-bold tw-text-[18px] sm:tw-text-[22px]">
-              {data.contact.phone}:{" "}
-              <span className="tw-font-medium tw-text-[18px] sm:tw-text-[22px]">
-                (42) 9 9935-7242
-              </span>
-            </span>
-            <div className="tw-flex tw-items-center tw-justify-start tw-gap-[20px]">
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href="https://www.linkedin.com/in/pedro-nunes-23a767184/"
-              >
-                <img src="/Linkedin.svg" alt="Linkedin" />
-              </a>
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href="https://github.com/neto18081"
-              >
-                <img src="/GitHub.svg" alt="Github" />
-              </a>
-            </div>
-          </div>
+          <span className="tw-text-center tw-block">
+            {data.contact.subtitle}
+          </span>
         </div>
-        {/* <form
-          // onSubmit={handleSubmit(onSubmit)}
+        <form
+          onSubmit={handleSubmit(onSubmit)}
           method="POST"
-          action="mailto:pedro.neto72pn@gmail.com"
           className="tw-flex tw-items-start tw-justify-center tw-flex-col tw-gap-[20px] tw-w-full tw-max-w-[450px] tw-mx-auto tw-py-[50px]"
         >
           <div className="tw-w-full tw-flex tw-items-start tw-justify-center tw-flex-col">
@@ -418,10 +434,10 @@ function App() {
                 errors.name ? "tw-border-[#cc0000]" : ""
               }`}
               type="text"
-              placeholder="Nome"
+              placeholder={data.contact.name + "*"}
             />
             {errors.name && (
-              <span className="error-message">Campo nome é obrigatório!</span>
+              <span className="error-message">{data.contact.required}</span>
             )}
           </div>
           <div className="tw-w-full tw-flex tw-items-start tw-justify-center tw-flex-col">
@@ -433,10 +449,10 @@ function App() {
                 errors.email ? "tw-border-[#cc0000]" : ""
               }`}
               type="email"
-              placeholder="Email"
+              placeholder="Email*"
             />
             {errors.email && (
-              <span className="error-message">Campo email é obrigatório!</span>
+              <span className="error-message">{data.contact.required}</span>
             )}
           </div>
           <div className="tw-w-full tw-flex tw-items-start tw-justify-center tw-flex-col">
@@ -445,16 +461,14 @@ function App() {
                 errors.phone ? "tw-border-[#cc0000]" : ""
               }`}
               type="tel"
-              placeholder="Telefone"
+              placeholder={data.contact.phone + "*"}
               {...register("phone", {
                 required: true,
               })}
             />
 
             {errors.phone && (
-              <span className="error-message">
-                Campo telefone é obrigatório!
-              </span>
+              <span className="error-message">{data.contact.required}</span>
             )}
           </div>
           <div className="tw-w-full tw-flex tw-items-start tw-justify-center tw-flex-col">
@@ -465,23 +479,56 @@ function App() {
               className={`contact-input ${
                 errors.message ? "tw-border-[#cc0000]" : ""
               }`}
-              placeholder="Mensagem"
+              placeholder={data.contact.message + "*"}
               rows={10}
             ></textarea>
 
             {errors.message && (
-              <span className="error-message">
-                Campo mensagem é obrigatório!
-              </span>
+              <span className="error-message">{data.contact.required}</span>
             )}
           </div>
           <button
-            className="tw-w-full tw-bg-[#4f95d0] tw-px-[30px] tw-py-[10px] tw-text-white tw-rounded-[10px] tw-font-medium hover:tw-font-bold"
+            className="tw-w-full tw-bg-[#4f95d0] tw-px-[30px] tw-py-[10px] tw-text-white tw-rounded-[10px] tw-font-medium hover:tw-font-bold tw-text-center tw-flex tw-justify-center"
             type="submit"
+            disabled={loading.contact}
           >
-            Enviar
+            {loading.contact ? (
+              <ReactLoading type="spin" color="#fff" height={25} width={25} />
+            ) : (
+              data.contact.send
+            )}
           </button>
-        </form> */}
+        </form>
+        <div className="tw-flex tw-items-start tw-justify-center tw-flex-col tw-py-[20px] sm:tw-py-[20px] tw-gap-[10px] tw-max-w-[450px] tw-w-full tw-mx-auto">
+          <span className="tw-font-nunito tw-font-bold tw-text-[18px] sm:tw-text-[22px]">
+            Email:{" "}
+            <span className="tw-font-medium tw-text-[18px] sm:tw-text-[22px]">
+              pedro.neto72pn@gmail.com
+            </span>
+          </span>
+          <span className="tw-font-nunito tw-font-bold tw-text-[18px] sm:tw-text-[22px]">
+            {data.contact.phone}:{" "}
+            <span className="tw-font-medium tw-text-[18px] sm:tw-text-[22px]">
+              (42) 9 9935-7242
+            </span>
+          </span>
+          <div className="tw-flex tw-items-center tw-justify-start tw-gap-[20px]">
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://www.linkedin.com/in/pedro-nunes-23a767184/"
+            >
+              <img src="/Linkedin.svg" alt="Linkedin" />
+            </a>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://github.com/neto18081"
+            >
+              <img src="/GitHub.svg" alt="Github" />
+            </a>
+          </div>
+        </div>
       </div>
     </Layout>
   );
